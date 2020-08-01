@@ -6,6 +6,10 @@ def validateScale1to10(value):
     if value > 10 or value < 0:
         raise ValidationError(u'%s is not on a scale of 1 to 10' % value)
 
+class Delta (models.Model):
+    percentLandChange = models.DecimalField(max_digits=5,decimal_places=2)
+    designator = models.CharField(max_length=50)
+
 class Tile (models.Model):
     geotiff = models.FileField()
     designator = models.CharField(max_length=50)
@@ -16,6 +20,7 @@ class Tile (models.Model):
     humanPresenceLevel = models.IntegerField(validators=[validateScale1to10])
     interestLevel = models.IntegerField(validators=[validateScale1to10])
     cloudCoverage = models.DecimalField(max_digits=5,decimal_places=2)
+    delta = models.ForeignKey(to=Delta, on_delete=models.CASCADE, null=True)
 
 
 class Point (models.Model):
@@ -35,12 +40,3 @@ class Object (models.Model):
         Point,
         on_delete=models.CASCADE,
     )
-
-
-class Delta (models.Model):
-    percentLandChange = models.DecimalField(max_digits=5,decimal_places=2)
-    designator = models.CharField(max_length=50)
-    newDateTime = models.DateTimeField(auto_now_add=False)
-    oldDateTime = models.DateTimeField(auto_now_add=False)
-    previousDelta = models.ForeignKey('self',null=True,on_delete=models.CASCADE)
-    
