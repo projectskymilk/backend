@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2et0dh+t75(po%%-9)+e9%p5dfgoz@*ykvw9$hv6h*ez#m4jw#'
+SECRET_KEY = os.getenv('SKYMILK_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'milksky.apps.MilkskyConfig',
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
