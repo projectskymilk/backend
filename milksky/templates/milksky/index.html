@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />  
+    <meta name="description" content="Sky Milk is a not-for-profit organization that aims to obtain counterterrorism intelligence and bring extremist militant insurgents into public scrutiny through remote espionage, human and computer analysis of imagery from threatened areas, and detailed investigative reporting">
+    <meta name="author" content="Rahat Maini">
+
+    <title>Sky Milk</title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'milksky/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'milksky/css/carousel.css' %}" rel="stylesheet">
+
+  </head>
+  <body>
+    
+      <header>
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'milksky:reports' %}">REPORTS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">ABOUT</a>
+                </li>
+              </ul>
+           
+            </div>
+          </nav>
+        </header>
+    
+   
+    <main role="main">
+
+      <section class="jumbotron text-center" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgb(0, 0, 0) ), url('{% static 'milksky/css/syria.jpg' %}');">
+        
+        <div class="container" style="text-align: left;">
+          <h2 class="featurette-heading" style="color: rgb(255, 255, 255);font-family: 'sfcameraregular';">The Sky Milk Project</h2> 
+           <br />
+          <p class="lead text" style="color: rgb(190, 190, 190)">Sky Milk is a not-for-profit organization that aims to obtain counterterrorism intelligence and bring extremist militant insurgents into public scrutiny through remote espionage, human and computer analysis of imagery from threatened areas, and detailed investigative reporting.</p> <br />
+          <p>
+            <a href="{% static 'milksky/reports.html' %}" class="btn btn-primary my-2" style="color:black;background-color: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;">GET REPORT NOTIFICATIONS</a>
+            <a href="about.html" class="btn btn-secondary my-2" style="background: none;border-color: rgb(255, 240, 53);border-radius: 0;color:rgb(255, 240, 53)">LEARN MORE &raquo;</a>
+          </p>
+        </div>
+      </section>
+
+
+      <section class="jumbotron text-center" style="background: linear-gradient( rgb(0, 0, 0), rgb(0, 0, 0) );">
+        
+        <div class="container">
+          <h2 class="featurette-heading" style="color: rgb(255, 255, 255);font-family: 'sfcameraregular';"><span style="color:rgb(255, 240, 53)">01.</span> Extracting satellite imagery of hotspot conflict areas, daily</h2> <br />
+          
+            <p><img src="{% static 'milksky/images/1.gif' %}" style="filter: grayscale(100%) brightness(70%) contrast(2) ;" class="animatedDots"></p>
+            <p class="lead text">
+            Automated web scraping from intelligence agencies, news corporations, and civilian reports leads to the tagging of suspect geographic locations for further analysis. Aerial coverage, in full-color and near infrared, of these interest areas captured by satellites is stored by Sky Milk, ranging in resolution from 100 meters down to 72 centimeters of coverage per pixel depending on the type of study required.</p>
+         
+        </div>
+      </section>
+
+      <hr style="background-color: rgb(255, 240, 53);width:20%">
+
+      <section class="jumbotron text-center" style="background: linear-gradient( rgb(0, 0, 0), rgb(0, 0, 0) );">
+        
+        <div class="container">
+          <h2 class="featurette-heading" style="color: rgb(255, 255, 255);font-family: 'sfcameraregular';"><span style="color:rgb(255, 240, 53)">02.</span> Classifying unusual and suspicious activity through data inferencing</h2> <br />
+          
+            <p><img src="{% static 'milksky/images/2.gif' %}" style="filter: grayscale(100%) brightness(70%) contrast(2);" class="animatedDots"></p>
+            <p class="lead text">Building alterations and new construction, along with identification of equipment and land use consistent with  extremist movements trigger human intervention to develop data-driven insights from satellite imagery. The conclusions are then used for model training and strengthening pattern analysis software to identify future threats before they emerge.</p>
+         
+        </div>
+      </section>
+
+      <hr style="background-color: rgb(255, 240, 53);width:20%;">
+      
+      <section class="jumbotron text-center" style="background: linear-gradient( rgb(0, 0, 0), rgb(0, 0, 0) );">
+        
+        <div class="container">
+          <h2 class="featurette-heading" style="color: rgb(255, 255, 255);font-family: 'sfcameraregular';"><span style="color:rgb(255, 240, 53)">03.</span> Disseminating information on threats to peace</h2> <br />
+          
+            <p><img src="{% static 'milksky/images/3.gif' %}" style="filter: grayscale(100%) brightness(70%) contrast(2);" class="animatedDots"></p>
+            <p class="lead text">As a case develops, Sky Milk will release satellite imagery for users to manually tag to strengthen the crisis classifier algorithm (manual tagging pending human approval process). After data extraction and full analysis of an area, Sky Milk will publicly release a detailed report on the insights gained and the investigation underwent. Sky Milk will alert authorities on unsanctioned activity where there is risk to human life.</p>
+         
+        </div>
+      </section>
+
+
+     
+          
+
+        <hr class="featurette-divider">
+
+
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="index.html#" style="color:rgb(255, 240, 53)">Back to top</a></p>
+        <p>2020 Sky Milk LLC, a not-for-profit organization</p>
+      </footer>
+    </main>
+
+    <script src="{% static 'milksky/js/jquery-3.2.1.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{% static 'milksky/js/popper.min.js' %}"></script>
+    <script src="{% static 'milksky/js/bootstrap.min.js' %}"></script>
+
+  
+
+</body></html>
