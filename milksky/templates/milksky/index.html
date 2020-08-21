@@ -24,13 +24,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{% url 'milksky:index' %}">HOME <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'milksky:reports' %}">REPORTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">ABOUT</a>
+                  <a class="nav-link" href="{% url 'milksky:about' %}">ABOUT</a>
                 </li>
               </ul>
            
@@ -48,8 +48,8 @@
            <br />
           <p class="lead text" style="color: rgb(190, 190, 190)">Sky Milk is a not-for-profit organization that aims to obtain counterterrorism intelligence and bring extremist militant insurgents into public scrutiny through remote espionage, human and computer analysis of imagery from threatened areas, and detailed investigative reporting.</p> <br />
           <p>
-            <a href="{% static 'milksky/reports.html' %}" class="btn btn-primary my-2" style="color:black;background-color: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;">GET REPORT NOTIFICATIONS</a>
-            <a href="about.html" class="btn btn-secondary my-2" style="background: none;border-color: rgb(255, 240, 53);border-radius: 0;color:rgb(255, 240, 53)">LEARN MORE &raquo;</a>
+            <a href="{% url 'milksky:reports' %}" class="btn btn-primary my-2" style="color:black;background-color: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;">GET REPORT NOTIFICATIONS</a>
+            <a href="{% url 'milksky:about' %}" class="btn btn-secondary my-2" style="background: none;border-color: rgb(255, 240, 53);border-radius: 0;color:rgb(255, 240, 53)">LEARN MORE &raquo;</a>
           </p>
         </div>
       </section>
@@ -104,7 +104,7 @@
 
       <!-- FOOTER -->
       <footer class="container">
-        <p class="float-right"><a href="index.html#" style="color:rgb(255, 240, 53)">Back to top</a></p>
+        <p class="float-right"><a href="{% url 'milksky:index' %}#" style="color:rgb(255, 240, 53)">Back to top</a></p>
         <p>2020 Sky Milk LLC, a not-for-profit organization</p>
       </footer>
     </main>

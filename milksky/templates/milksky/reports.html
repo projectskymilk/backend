@@ -9,8 +9,8 @@
     <title>Reports</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="{% static 'milksky/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'milksky/css/carousel.css' %}" rel="stylesheet">
  
   </head>
   <body>
@@ -23,13 +23,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">HOME</a>
+                  <a class="nav-link" href="{% url 'milksky:index' %}">HOME</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="reports.html">REPORTS <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{% url 'milksky:reports' %}">REPORTS <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">ABOUT</a>
+                  <a class="nav-link" href="{% url 'milksky:about' %}">ABOUT</a>
                 </li>
               </ul>
            
@@ -40,17 +40,18 @@
    
     <main role="main">
 
-      <section class="jumbotron text-center" style="background: linear-gradient( rgba(0, 0, 0, 0.5),  rgb(0, 0, 0) ), url('css/kali.jpg');">
+      <section class="jumbotron text-center" style="background: linear-gradient( rgba(0, 0, 0, 0.5),  rgb(0, 0, 0) ), url('{% static 'milksky/css/kali.jpg' %}');">
         
         <div class="container" style="text-align: left;">
           <h2 class="featurette-heading" style="color: rgb(255, 255, 255);font-family: 'sfcameraregular'">Arriving late 2020</h2> <br />
           <p class="lead text" style="color: rgb(190, 190, 190)">Sign up below to get notified when Sky Milk releases the first of a series of public reports and opens up its crowdsourced satellite imagery classification dashboard, later this year.</p>
-          <form style="display: inline-block;" id="email_form"> 
+          <form style="display: inline-block;" id="email_form" method="post" action = "{% url 'milksky:signupReport'%}"> 
+            {% csrf_token %}
             <div class="form-group" style="align-items: center;padding-top: 10%;">
               <input type="hidden" name="access_token" value="spbbrhbbc2veedsxqk1c83ew" />
               <input type="hidden" name="subject" value="SKY MILK SIGNUP" />
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email" name="text">
-              <small style="margin-bottom: 1rem;" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small><button id="submit_form" type="submit" value="Send" class="btn btn-primary" style="background: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;color:black">SIGN UP</button>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email" name="email">
+              <small style="margin-bottom: 1rem;" id="emailHelp" class="form-text text-muted">We'll never share your email with anyone.</small><button type="submit" class="btn btn-primary" style="background: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;color:black">SIGN UP</button>
             </div>
           </form>
         </div>
@@ -142,10 +143,10 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{% static 'milksky/js/jquery-3.2.1.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'milksky/js/popper.min.js' %}"></script>
+    <script src="{% static 'milksky/js/bootstrap.min.js' %}"></script>
 
   
 

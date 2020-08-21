@@ -24,7 +24,6 @@ class Tile (models.Model):
 
 
 class Point (models.Model):
-    
     lat = models.DecimalField(max_digits=9, decimal_places=6)
     lon = models.DecimalField(max_digits=9, decimal_places=6)
     nextPoint = models.ForeignKey('self',null=True,on_delete=models.CASCADE)
@@ -40,3 +39,8 @@ class Object (models.Model):
         Point,
         on_delete=models.CASCADE,
     )
+
+class ReportSignup (models.Model):
+    emailAddress = models.EmailField(max_length=254)
+    dateSignedUp = models.DateField(auto_now=True)
+

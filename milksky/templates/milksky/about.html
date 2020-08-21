@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -8,8 +9,8 @@
     <title>About</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="{% static 'milksky/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'milksky/css/carousel.css' %}" rel="stylesheet">
  
   </head>
   <body>
@@ -22,13 +23,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">HOME </a>
+                  <a class="nav-link" href="{% url 'milksky:index' %}">HOME </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'milksky:reportsPage' %}">REPORTS</a>
+                  <a class="nav-link" href="{% url 'milksky:reports' %}">REPORTS</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="about.html">ABOUT <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{% url 'milksky:about' %}">ABOUT <span class="sr-only">(current)</span></a>
                 </li>
               </ul>
            
@@ -39,9 +40,9 @@
    
     <main role="main">
 
-      <section class="jumbotron text-center" style="background: linear-gradient( rgba(0, 0, 0, 0.4), rgb(0, 0, 0) ), url('css/tobelo.jpg');">
+      <section class="jumbotron text-center" style="background: linear-gradient( rgba(0, 0, 0, 0.4), rgb(0, 0, 0) ), url('{% static 'milksky/css/nk.jpg' %}');filter: grayscale(80%);">
         
-        <div class="container" style="text-align: left;color: rgb(190, 190, 190)">
+        <div class="container" style="text-align: left;color: rgb(196, 196, 196)">
           <h2 class="featurette-heading" style="color: rgb(255, 255, 255);font-family: 'sfcameraregular'">About Sky Milk</h2> <br />
           <p style="text-align: left;">The United States has initiated an exodus of troops from West Africa in the midst of an onslaught of extremist attacks pushing into Burkina Faso, Niger, and other countries in the Sahel region. As Pentagon counterterrorism operations shift towards threats originating from China and Russia, insurgents that threaten overlooked areas are deemed of lesser relevance to national security. However as history has shown, often these unsubdued insurgents snowball into increasingly unstoppable terrorist cells.</p>
           <p style="text-align: left;">Sky Milk is storing satellite imagery of suspect areas daily and applying classifiers to identify elements in the imagery. Based on training data from previous projects such as Satellite Sentinel Project and eventually user-generated/admin-approved classifications, we hope to automate the process of land-use monitoring and trigger alerts upon suspicious activity. After human and algorithmic inspection, Sky Milk will release detailed findings for public knowledge and attempt to issue warnings to relevant agencies should they be unaware of the situation.</p>
@@ -53,21 +54,21 @@
         <!-- Three columns of text below the carousel -->
         <div class="row ">
       <div class="col-lg" style="text-align: center;">
-        <img width="150" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="css/rahat.JPG" style="border-radius: 50%;filter: grayscale(100%) brightness(80%);margin-bottom: 1rem;"></img>
+        <img width="150" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="{% static 'milksky/css/rahat.JPG' %}" style="border-radius: 50%;filter: grayscale(100%) brightness(80%);margin-bottom: 1rem;"></img>
         <h2 class="featurette-heading" style="margin-top: 0rem;">Rahat Maini. <span style="color:rgb(255, 240, 53)">Data Engineer.</span></h2><br />
         <p style="text-align: left;">Rahat founded Sky Milk out of a desire to leverage his background in satellite imagery analysis and data science for espionage. He is responsible for the fullstack development of the Sky Milk web dashboard and reporting tools, the database design and development, and the web scrapers that inform Sky Milk's ongoing hotspot searches.</p>
         <p style="text-align: left;"><a class="btn btn-primary" href="mailto:rahat@skymilk.org" role="button" style="color:black;background-color: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;">rahat@skymilk.org</a></p>
       </div><!-- /.col-lg -->
 
       <div class="col-lg" style="text-align: center;">
-        <img width="150" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="css/walta.JPG" style="border-radius: 50%;filter: grayscale(100%) brightness(80%);margin-bottom: 1rem;"></img>
+        <img width="150" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="{% static 'milksky/css/walta.JPG' %}" style="border-radius: 50%;filter: grayscale(100%) brightness(80%);margin-bottom: 1rem;"></img>
         <h2 class="featurette-heading" style="margin-top: 0rem;">Walta Muruts. <span style="color:rgb(255, 240, 53)">Researcher.</span></h2><br />
         <p style="text-align: left;"> Walta joined Sky Milk to utilize his Foreign Affairs background in a research-and-action setting. He brings an acute understanding of the political events unfolding across sub-Saharan Africa and is responsible for intel collection on terrorist organizations and their areas of operations, human curation of data retrieved from the web scrapers, and report publishing for public awareness.</p>
         <p style="text-align: left;"><a class="btn btn-primary" href="mailto:waltamuruts@gmail.com" role="button" style="color:black;background-color: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;">waltamuruts@gmail.com</a></p>
       </div>
 
       <div class="col-lg" style="text-align: center;">
-        <img width="150" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="css/keanu.JPG" style="border-radius: 50%;filter: grayscale(100%) brightness(80%);margin-bottom: 1rem;"></img>
+        <img width="150" height="auto" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="{% static 'milksky/css/keanu.JPG' %}" style="border-radius: 50%;filter: grayscale(100%) brightness(80%);margin-bottom: 1rem;"></img>
         <h2 class="featurette-heading" style="margin-top: 0rem;">Keanu Nichols. <span style="color:rgb(255, 240, 53)">CV Scientist.</span></h2><br />
         <p style="text-align: left;">Keanu joined Sky Milk to develop new methodologies for computer vision research on satellite imagery. He is responsible for conducting research on technologies that solve problems such as distinguishing visual features in images in a non-rudimentary and scalabe way as well as experimenting with supervised learning for image labeling to build a semantic dataset.</p>
         <p style="text-align: left;"><a class="btn btn-primary" href="mailto:nichols.keanu9@gmail.com" role="button" style="color:black;background-color: rgb(255, 240, 53);border-color: rgb(255, 240, 53);border-radius: 0;">nichols.keanu9@gmail.com</a></p>
@@ -84,7 +85,7 @@
 
       <!-- FOOTER -->
       <footer class="container">
-        <p class="float-right"><a href="index.html#" style="color:rgb(255, 240, 53)">Back to top</a></p>
+        <p class="float-right"><a href="{% url 'milksky:about' %}#" style="color:rgb(255, 240, 53)">Back to top</a></p>
         <p>2020 Sky Milk LLC, a not-for-profit organization</p>
       </footer>
     </main>
@@ -92,9 +93,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'milksky/js/jquery-3.2.1.slim.min.js' %}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{% static 'milksky/js/popper.min.js' %}"></script>
+    <script src="{% static 'milksky/js/bootstrap.min.js' %}"></script>
  
 
 </body></html>

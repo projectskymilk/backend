@@ -7,5 +7,7 @@ app_name = 'milksky'
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('reports/', views.reportPage, name='reports')
+    path('reports/', views.ReportsView.as_view(), name='reports'),
+    path('about/', views.AboutView.as_view(), name='about'),
+    path('signupReport/', views.signupReport, name='signupReport'),
 ]
