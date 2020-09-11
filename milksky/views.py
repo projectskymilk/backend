@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from datetime import datetime
 from .models import ReportSignup
 
 # Create your views here.
@@ -15,7 +16,9 @@ class AboutView(TemplateView):
 def signupReport(request):
     newSignup = ReportSignup()
     newSignup.emailAddress = request.POST.get('email')
+    newSignup.dateSignedUp = datetime.now()
     newSignup.save()
-    context = {    
+    context = {  
+        'signedUp':"You're signed up!"  
             }
     return render(request, "milksky/reports.html", context)

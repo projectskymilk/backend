@@ -42,5 +42,5 @@ class Object (models.Model):
 
 class ReportSignup (models.Model):
     emailAddress = models.EmailField(max_length=254)
-    dateSignedUp = models.DateField(auto_now=True)
+    dateSignedUp = models.DateTimeField()
 
